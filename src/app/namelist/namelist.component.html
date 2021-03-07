@@ -1,0 +1,22 @@
+<div class="table table-hover">
+  <tr *ngFor="let emp of allEmployee">
+    <td><li>{{emp.first_name}}</li></td>
+    <td><button (click)= 'edit(emp)'><mat-icon aria-hidden="false" aria-label="Example edit icon" >edit</mat-icon></button></td>
+    <td><button (click)= 'delete(emp.id)'><mat-icon aria-hidden="false" aria-label="Example delete icon" >delete</mat-icon></button></td>
+  </tr>
+</div>
+
+<form class="example-form">
+    <table class="example-full-width" cellspacing="0"><tr>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>First name</mat-label>
+        <input matInput>
+      </mat-form-field></td>
+    </tr>
+  </table>
+</form>
+
+  <!-- <a [routerLink]="['contact/addContact']"><button mat-raised-button color="warn">Submit</button></a>  -->
+<button [routerLink]="['/addContact']">Add</button>
+<!-- <p>{{result}}</p> -->
+

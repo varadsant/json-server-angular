@@ -1,0 +1,41 @@
+<p>adcontact works!</p>
+
+<mat-form-field appearance="fill">
+    <mat-label>Street 1</mat-label>
+    <input matInput >
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+    <mat-label>Street 2</mat-label>
+    <input matInput>
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+    <mat-label>Town</mat-label>
+    <input matInput>
+</mat-form-field>
+
+
+<!-- <mat-form-field appearance="fill">
+    <mat-label>Select</mat-label>
+    <mat-select *ngFor = "let countries of allCountries">
+      <mat-option value="one">{{countries.name}}</mat-option>
+    </mat-select>
+</mat-form-field>  -->
+<!-- 
+ <mat-form-field appearance="fill">
+    <mat-label >Select</mat-label>
+    <mat-select *ngFor= "let countries of allCountries">
+      <mat-option>{{countries.name}}</mat-option>
+    </mat-select>
+</mat-form-field>  -->
+
+
+<mat-form-field appearance="fill">
+    <mat-label>Select Country</mat-label>
+    <mat-select [formControl]="countriesList" required>
+      <mat-option *ngFor="let countries of allCountries">
+        {{countries.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
