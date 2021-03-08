@@ -1,6 +1,12 @@
 {
   "contacts": [
     {
+      "id": 1,
+      "first_name": "Aloy",
+      "last_name": "Sobeck",
+      "avatar": "https://pbs.twimg.com/profile_images/862284388012367872/sBzixGdN.jpg"
+    },
+    {
       "id": 2,
       "first_name": "Edward",
       "last_name": "Kenway",

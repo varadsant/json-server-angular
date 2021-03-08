@@ -17,15 +17,7 @@ export class AddContListService {
   public contactList : any = ['abc','qqq'];
   mockUrl = 'http://localhost:3000/contacts';
   countries = 'http://localhost:3000/countries';
-
-  // currentAddress:address = {
-  //   street1: '',
-  //   street2 : '',
-  //   town : '',
-  //   country: '',
-  //   contactId: null,
-  //   id: null
-  // }
+  address = 'http://localhost:3000/addresses';
 
   constructor(
     private http: HttpClient
@@ -51,5 +43,12 @@ export class AddContListService {
     this.contactList.push(name);
   }
 
+  addToContact(cont): Observable<any>{
+    return this.http.post(this.mockUrl, cont, headerOpt);
+  }
+
+  getAddress(): Observable<address>{
+    return this.http.get<address>(this.address, headerOpt);
+  }
 
 }

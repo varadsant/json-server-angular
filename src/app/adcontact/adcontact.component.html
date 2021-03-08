@@ -1,41 +1,27 @@
 <p>adcontact works!</p>
 
 <mat-form-field appearance="fill">
-    <mat-label>Street 1</mat-label>
-    <input matInput >
+    <mat-label >Street 1</mat-label>
+    <input matInput [(ngModel)]= "currentAddress.street1" name = "street1">
 </mat-form-field>
 
 <mat-form-field appearance="fill">
     <mat-label>Street 2</mat-label>
-    <input matInput>
+    <input matInput [(ngModel)]= "currentAddress.street2" name = "street2">
 </mat-form-field>
 
 <mat-form-field appearance="fill">
     <mat-label>Town</mat-label>
-    <input matInput>
+    <input matInput [(ngModel)]= "currentAddress.town" name = "town">
 </mat-form-field>
-
-
-<!-- <mat-form-field appearance="fill">
-    <mat-label>Select</mat-label>
-    <mat-select *ngFor = "let countries of allCountries">
-      <mat-option value="one">{{countries.name}}</mat-option>
-    </mat-select>
-</mat-form-field>  -->
-<!-- 
- <mat-form-field appearance="fill">
-    <mat-label >Select</mat-label>
-    <mat-select *ngFor= "let countries of allCountries">
-      <mat-option>{{countries.name}}</mat-option>
-    </mat-select>
-</mat-form-field>  -->
-
 
 <mat-form-field appearance="fill">
     <mat-label>Select Country</mat-label>
-    <mat-select [formControl]="countriesList" required>
-      <mat-option *ngFor="let countries of allCountries">
+    <mat-select required [(ngModel)]= "currentAddress.country" name = "country">
+      <mat-option *ngFor="let countries of allCountries" [value]="countries.name">
         {{countries.name}}
       </mat-option>
     </mat-select>
   </mat-form-field>
+
+  <button mat-raised-button color="warn" (click) = 'submitForm()'>Submit</button>
