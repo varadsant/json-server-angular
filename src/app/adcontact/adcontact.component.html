@@ -18,10 +18,10 @@
 <mat-form-field appearance="fill">
     <mat-label>Select Country</mat-label>
     <mat-select required [(ngModel)]= "currentAddress.country" name = "country">
-      <mat-option *ngFor="let countries of allCountries" [value]="countries.name">
+      <mat-option *ngFor="let countries of allCountries" [value]="countries.iso2">
         {{countries.name}}
       </mat-option>
     </mat-select>
   </mat-form-field>
 
-  <button mat-raised-button color="warn" (click) = 'submitForm()'>Submit</button>
+  <button mat-raised-button color="warn" (click) = 'submitForm(currentAddress)'>Submit</button>

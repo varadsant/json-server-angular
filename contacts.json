@@ -23,6 +23,18 @@
       "first_name": "John",
       "last_name": "Doe",
       "id": 4
+    },
+    {
+      "id": 5,
+      "first_name": "varad",
+      "last_name": "sant",
+      "avatar": "https://handmade.network/static/light/empty-avatar.svg"
+    },
+    {
+      "id": 6,
+      "first_name": "yash",
+      "last_name": "apte",
+      "avatar": "https://handmade.network/static/light/empty-avatar.svg"
     }
   ],
   "addresses": [

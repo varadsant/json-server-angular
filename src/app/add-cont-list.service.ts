@@ -31,6 +31,10 @@ export class AddContListService {
     return this.http.get<contacts[]>(this.mockUrl, headerOpt);
   }
 
+  updateEmployee(updateData){
+    return this.http.put(this.address+'/'+updateData.id, updateData, headerOpt);
+  }
+
   deleteContact(id: number){
     return this.http.delete(this.mockUrl+'/'+id, headerOpt);
   }
@@ -49,6 +53,15 @@ export class AddContListService {
 
   getAddress(): Observable<address>{
     return this.http.get<address>(this.address, headerOpt);
+  }
+
+  findAddress(id): Observable<address>{
+    const a = this.http.get<address>(this.address+'/'+id, headerOpt);
+    if(a === null){
+      return null;
+    }else{
+      return this.http.get<address>(this.address+'/'+id, headerOpt);
+    }
   }
 
 }

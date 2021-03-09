@@ -28,27 +28,44 @@ export class AdcontactComponent {
 }
 constructor(private addcont:AddContListService, private route: ActivatedRoute,
   private router: Router){ 
-    console.log(this.route.snapshot.queryParamMap);
+    let routeVal = this.route.snapshot.queryParamMap.get('id');
+    //this.currentAddress.id = routeVal;
+    //this.currentAddress.id = routeVal; 
    // this.currentAddress 
     this.getCountries();
     this.getAddress();
 
 }
+
+  addConct(routeVal){
+    this.addcont.findAddress(routeVal).subscribe(
+      (data) => {
+        console.log(data);
+      }
+    )
+  }
+
   getAddress(){
     this.addcont.getAddress().subscribe(
       (data) =>{
       this.emp_address = data;
       console.log(this.emp_address);
       this.currentAddress = this.emp_address[0];
-      if(this.allCountries.length !== 0 ){
-        this.currentAddress[0].country ? this.currentAddress[0].country = this.allCountries.filter( item => item.iso2 === this.emp_address[0].country) : null; 
-      }
+      console.log(this.currentAddress);
+
+      this.currentAddress[0].country = this.allCountries.filter( item => item.iso2 === this.emp_address[0].country); 
+     console.log(this.currentAddress);
     });
   }
   
 
-  submitForm(){
+  submitForm(data){
     console.log(this.currentAddress);
+    this.addcont.updateEmployee(data).subscribe(
+      (data) => {
+        console.log(data);
+      }
+    )
   }
 
   getCountries(){
